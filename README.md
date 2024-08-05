@@ -16,14 +16,16 @@ This is a Flask-based appointment booking system. Users can book appointments by
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/appointment_booking_system.git
-   cd appointment_booking_system
+   git clone https://github.com/maikl88/flask_appointment.git
+   cd flask_appointment
    ```
 
 2. **Create and activate a virtual environment:**
 
    ```bash
    python -m venv venv
+   ```
+   ```bash
    venv\Scripts\activate  # For Windows
    # source venv/bin/activate  # For MacOS/Linux
    ```
@@ -48,6 +50,10 @@ This is a Flask-based appointment booking system. Users can book appointments by
    python add_services.py
    ```
 
+6. **Initialization DB**
+   ```bash
+   python init_db.py
+   ```
 username `admin` and the password `admin`. **Make sure to change the password after the first login.**
 
 7. **Run the Flask project:**
@@ -73,7 +79,7 @@ username `admin` and the password `admin`. **Make sure to change the password af
 ## File Structure
 
 ```plaintext
-appointment_booking_system/
+flask_appointment/
 ├── app/
 │   ├── __init__.py
 │   ├── models.py
@@ -90,7 +96,7 @@ appointment_booking_system/
 │   │       └── scripts.js
 ├── migrations/
 ├── venv/
-├── create_admin.py
+├── init_db.py
 ├── config.py
 ├── requirements.txt
 └── README.md
