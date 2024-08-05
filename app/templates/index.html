@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container">
+      <h1>Book an Appointment</h1>
+      <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+              {{ form.client_name.label }}<br>
+              {{ form.client_name(class="form-control") }}
+          </div>
+          <div class="form-group">
+              <div id="calendar"></div>
+              {{ form.date(class="d-none") }}  <!-- Скрытое поле для даты -->
+          </div>
+          <div class="form-group">
+              {{ form.time.label }}<br>
+              <div id="time-slots" class="d-flex flex-wrap justify-content-center">
+                  {% for hour in range(9, 18) %}
+                      <div class="time-slot" data-value="{{ "%02d:00" | format(hour) }}">
+                          {{ "%02d:00" | format(hour) }}
+                      </div>
+                  {% endfor %}
+              </div>
+              {{ form.time(class="d-none") }}
+          </div>
+          <div class="form-group">
+              {{ form.service.label }}<br>
+              <div class="service-list">
+                  {% for subfield in form.service %}
+                      <div class="service-item">
+                          <h5>{{ subfield.label.text.split(' - ')[0] }}</h5>
+                          <p>{{ subfield.label.text.split(' - ')[1] }}</p>
+                          {{ subfield }}
+                      </div>
+                  {% endfor %}
+              </div>
+          </div>
+          <div class="form-group">
+              {{ form.submit(class="btn btn-primary") }}
+          </div>
+      </form>
+  </div>
+{% endblock %}
