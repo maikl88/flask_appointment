@@ -2,6 +2,11 @@
 
 This is a Flask-based appointment booking system. Users can book appointments by selecting available time slots and services. Admin users can view all booked appointments.
 
+# Demo - version
+   ```bash
+   https://maikl88.pythonanywhere.com/
+   ```
+
 ## Features
 
 - User authentication (login/logout)
